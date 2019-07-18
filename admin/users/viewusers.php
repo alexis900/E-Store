@@ -15,15 +15,15 @@ $users = $db->get('users');
     </thead>
     <tbody>
 <?php
-for ($i=0; $i <= $db->count; $i++) {?>
+for ($i=0; $i < $db->count; $i++) {?>
     <tr>
         <td><?=$users[$i]['user_id']?></td>
-        <td><img src="<?=$users[$i]['images']?>" alt=""/></td>
-        echo "<td>" . $users[$i]['email'] . "</td>";
-        echo "<td>" . $users[$i]['user_name'] . "</td>";
-        echo "<td>" . $users[$i]['reg_date'] . "</td>";
-        echo "<td>" . $users[$i]['role_id'] . "</td>";
-    echo "</tr>";
+        <td><img src="<?=$users[$i]['image']?>" alt="" width="40px"/></td>
+        <td><?=$users[$i]['email']?></td>
+        <td><?=$users[$i]['user_name']?></td>
+        <td><?=$users[$i]['reg_date']?></td>
+        <td><?=$users[$i]['role_id']?></td>
+    </tr>
 <?php
 }
 ?>
