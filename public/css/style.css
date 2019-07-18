@@ -1,0 +1,8 @@
+header#header {
+    position: relative;
+    background: red;
+}
+
+#search-box {
+    height: 50%;
+}
