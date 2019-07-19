@@ -14,7 +14,7 @@ function checkPermission($role_id){
 
 function isSession(){
     $session = false;
-    if (isset($_SESSION['email']) & isset($_SESSION['role_id'])) {
+    if (isset($_SESSION['user']) & isset($_SESSION['role_id'])) {
         $session = true;
     }
     return $session;
@@ -23,9 +23,11 @@ function isSession(){
 function admPanel($locationTrue, $locationFalse){
     if (isset($_SESSION['user']) & isset($_SESSION['role_id'])) {
         if (in_array(5, checkPermission($_SESSION['role_id']))) {
-            header("$locationTrue");
+            header($locationTrue);
         } else {
             header($locationFalse);
         }
+    } else {
+        header($locationFalse);
     }
 }

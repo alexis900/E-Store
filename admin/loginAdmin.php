@@ -2,7 +2,7 @@
 include '../lib/db.php';
 include '../lib/user.php';
 include '../lib/functions.php';
-admPanel("Location: /admin/", "Location: /admin/loginAdmin.php");
+admPanel("Location: /admin/", "");
 if (isset($_POST['submit']) & !empty($_POST['email']) & !empty($_POST['passwd'])) {
     $email = $_POST['email'];
     $passwd = $_POST['passwd'];
@@ -16,6 +16,7 @@ if (isset($_POST['submit']) & !empty($_POST['email']) & !empty($_POST['passwd'])
     if ($db->count == 1) {
         $_SESSION["user"]=$email;
         $_SESSION["role_id"]=$users[0]['role_id'];
+        admPanel("Location: /admin/", "Location: /admin/loginAdmin.php");
     } else {
         echo "No tienes suficientes permisos";
     }

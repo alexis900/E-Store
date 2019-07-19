@@ -20,14 +20,14 @@ function mainHead($title){
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">Logo</a>
   <form class="">
-      <input class="" type="search" placeholder="Search" aria-label="Search">
+      <input class="" type="search" placeholder="Busca un producto..." aria-label="Search">
       <button class="" type="submit"><i class="mdi mdi-magnify"></i></button>
     </form>
     <ul>
       <li>
         <a href="#"><i class="mdi mdi-account"></i>Mi cuenta</a>
       </li>
-      <li><a href="#"><i class="mdi mdi-cart"></i>Carrito (0)</a></li>
+      <li><a href="#"><i class="mdi mdi-basket"></i>Carrito (0)</a></li>
     </ul>
 </nav>
 <?php
@@ -53,7 +53,7 @@ function adminHead($title){
     <ul>
       <li><a href="/admin/"><i class="mdi mdi-account"></i>Mi cuenta</a></li>
       <ul>
-        <li><a href="/logout.php">Cerrar Sesión</a></li>
+        <li><a href="/logout.php"><i class="mdi mdi-account-off"></i>Cerrar Sesión</a></li>
       </ul>
       <li><a href="#"><i class="mdi mdi-bell"></i>Notificaciones (0)</a></li>
       <li><a href="../"><i class="mdi mdi-home"></i>Sitio principal</a></li>
