@@ -12,7 +12,9 @@ INSERT INTO `permissions` (`perm_mod`, `perm_id`, `perm_desc`) VALUES
 ('USR', 1, 'Acceso al usuario'),
 ('USR', 2, 'Crear nuevos usuarios'),
 ('USR', 3, 'Actualizar usuarios'),
-('USR', 4, 'Eliminar usuarios');
+('USR', 4, 'Eliminar usuarios'),
+('ADM', 5, 'Iniciar en el panel de administración'),
+('USR', 6, 'Comprador');
 
 CREATE TABLE `roles` (
   `role_id` int AUTO_INCREMENT PRIMARY KEY UNIQUE,
@@ -31,6 +33,18 @@ CREATE TABLE `roles_permissions` (
   `perm_id` int(11) NOT NULL,
   PRIMARY KEY (`role_id`,`perm_mod`,`perm_id`)
 ) ENGINE=InnoDB;
+
+INSERT INTO `roles_permissions` (`role_id`, `perm_mod`, `perm_id`) VALUES
+(1, 'USR', 1),
+(1, 'USR', 2),
+(1, 'USR', 3),
+(1, 'USR', 4),
+(1, 'ADM', 5),
+(1, 'USR', 6),
+(2, 'USR', 1),
+(2, 'USR', 5),
+(3, 'USR', 6),
+(4, 'USR', 6);
 
 CREATE TABLE `users` (
 	`user_id` int PRIMARY KEY AUTO_INCREMENT,

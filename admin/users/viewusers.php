@@ -1,6 +1,6 @@
 <?php
-include_once '../../lib/db.php';
-$users = $db->get('users');
+$db->join("roles r", "r.role_id=u.role_id", "INNER");
+$users = $db->get("users u");
 ?>
 <table>
     <thead>
@@ -22,7 +22,7 @@ for ($i=0; $i < $db->count; $i++) {?>
         <td><?=$users[$i]['email']?></td>
         <td><?=$users[$i]['user_name']?></td>
         <td><?=$users[$i]['reg_date']?></td>
-        <td><?=$users[$i]['role_id']?></td>
+        <td><?=$users[$i]['role_name']?></td>
     </tr>
 <?php
 }

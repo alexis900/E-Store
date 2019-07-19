@@ -1,6 +1,6 @@
 <?php
 require 'lib/db.php';
-require 'includes/functions.php';
+require 'lib/functions.php';
 mainHead("Inicio");
 
 mainFooter();

@@ -51,7 +51,10 @@ function adminHead($title){
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">Logo Admin Panel</a>
     <ul>
-      <li><a href="#"><i class="mdi mdi-account"></i>Mi cuenta</a></li>
+      <li><a href="/admin/"><i class="mdi mdi-account"></i>Mi cuenta</a></li>
+      <ul>
+        <li><a href="/logout.php">Cerrar Sesión</a></li>
+      </ul>
       <li><a href="#"><i class="mdi mdi-bell"></i>Notificaciones (0)</a></li>
       <li><a href="../"><i class="mdi mdi-home"></i>Sitio principal</a></li>
     </ul>
@@ -63,3 +66,4 @@ function adminFooter() {
 echo"</body>
 </html>";
 }
+
